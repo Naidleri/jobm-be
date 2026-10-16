@@ -8,6 +8,7 @@ import databaseConfig from './config/database.config.js';
 import { DatabaseModule } from './database/database.module.js';
 import { AuthModule } from './modules/auth/auth.module.js';
 import { CompanyModule } from './modules/company/company.module.js';
+import { JobsModule } from './modules/jobs/jobs.module.js';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { CompanyModule } from './modules/company/company.module.js';
     DatabaseModule,
     AuthModule,
     CompanyModule,
+    JobsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
