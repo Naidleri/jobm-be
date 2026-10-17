@@ -77,7 +77,7 @@ export class AuthService {
 
     const token = await this.jwtService.signAsync(
       { sub: user.id, role: user.role },
-      { secret: jwtSecret },
+      { secret: jwtSecret, expiresIn: '1d' },
     );
 
     return {
