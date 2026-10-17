@@ -6,19 +6,19 @@ const seedPassword = process.env.SEED_COMPANY_PASSWORD ?? 'Password123!';
 
 const companies = [
   {
-    name: 'abc',
+    name: 'PT ABC',
     email: 'abc@company.local',
-    description: 'ABC company',
+    description: 'PT ABC',
   },
   {
-    name: 'xyz',
+    name: 'PT XYZ',
     email: 'xyz@company.local',
-    description: 'XYZ company',
+    description: 'PT XYZ',
   },
   {
-    name: 'sss',
+    name: 'PT SSS',
     email: 'sss@company.local',
-    description: 'SSS company',
+    description: 'PT SSS',
   },
 ];
 
