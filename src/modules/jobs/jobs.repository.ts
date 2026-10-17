@@ -48,8 +48,21 @@ export class JobsRepository {
   }
 
   createApplication(jobId: string, jobSeekerId: string, coverLetter: string) {
-    return this.prisma.application.create({
-      data: { jobId, jobSeekerId, coverLetter },
+    return this.prisma.$transaction(async (tx) => {
+      const application = await tx.application.create({
+        data: { jobId, jobSeekerId, coverLetter },
+      });
+
+      await tx.applicationHistory.create({
+        data: {
+          applicationId: application.id,
+          fromStatus: null,
+          toStatus: application.status,
+          changedById: jobSeekerId,
+        },
+      });
+
+      return application;
     });
   }
 
