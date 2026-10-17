@@ -57,7 +57,7 @@ export class JobsService {
         salaryMax: job.salaryMax,
         currency: job.currency,
         jobType: job.jobType,
-        hasApplied: job.applications.length > 0,
+        hasApplied: Boolean(userId && job.applications?.length),
       })),
       total,
       page,
@@ -80,7 +80,7 @@ export class JobsService {
       currency: job.currency,
       jobType: job.jobType,
       status: job.status,
-      hasApplied: job.applications.length > 0,
+      hasApplied: Boolean(userId && job.applications?.length),
     };
   }
 
