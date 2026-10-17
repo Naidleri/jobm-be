@@ -57,6 +57,7 @@ export class JobsService {
         salaryMax: job.salaryMax,
         currency: job.currency,
         jobType: job.jobType,
+        postedAt: job.createdAt,
         hasApplied: Boolean(userId && job.applications?.length),
       })),
       total,
@@ -80,6 +81,7 @@ export class JobsService {
       currency: job.currency,
       jobType: job.jobType,
       status: job.status,
+      postedAt: job.createdAt,
       hasApplied: Boolean(userId && job.applications?.length),
     };
   }
